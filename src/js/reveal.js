@@ -2,7 +2,6 @@ export function initReveal() {
   const items = Array.from(document.querySelectorAll('.reveal'));
   if (!items.length) return;
 
-  // No IntersectionObserver: show everything rather than hiding content.
   if (!('IntersectionObserver' in window)) {
     items.forEach((el) => el.classList.add('is-visible'));
     return;

@@ -80,7 +80,6 @@ export function initCarousel() {
     });
   }
 
-  // Keyboard support once the carousel has focus inside it.
   carousel.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
       step(-1);

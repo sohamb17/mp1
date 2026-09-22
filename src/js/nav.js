@@ -1,5 +1,5 @@
-const SCROLL_TRIGGER = 40; // px before the navbar collapses
-const BOTTOM_SLACK = 2;    // px tolerance for "scrolled to the bottom"
+const SCROLL_TRIGGER = 40;
+const BOTTOM_SLACK = 2;
 
 export function initNav() {
   const header = document.querySelector('.site-header');
@@ -9,7 +9,6 @@ export function initNav() {
 
   if (!header || !links.length) return;
 
-  // Sections in nav order, derived from the links themselves.
   const sections = links
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
@@ -31,11 +30,8 @@ export function initNav() {
   function update() {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-    // 1. Navbar resize.
     header.classList.toggle('is-scrolled', scrollY > SCROLL_TRIGGER);
 
-    // 2. Position indicator: last section whose top sits above the
-    //    bottom edge of the navbar.
     const readingLine = scrollY + header.offsetHeight + 1;
     let currentId = sections.length ? sections[0].id : null;
 
@@ -44,8 +40,6 @@ export function initNav() {
       if (top <= readingLine) currentId = section.id;
     });
 
-    // 3. At the very bottom, force the final item — the last section may be
-    //    too short to ever cross the reading line on its own.
     const viewportBottom = Math.ceil(scrollY + window.innerHeight);
     const pageHeight = document.documentElement.scrollHeight;
     if (sections.length && viewportBottom >= pageHeight - BOTTOM_SLACK) {
@@ -68,7 +62,6 @@ export function initNav() {
     toggle.setAttribute('aria-expanded', 'false');
   }
 
-  // ---- Mobile menu ----
   if (toggle && list) {
     toggle.addEventListener('click', () => {
       const isOpen = list.classList.toggle('is-open');
@@ -76,7 +69,6 @@ export function initNav() {
     });
   }
 
-  // ---- Smooth scrolling for every in-page anchor ----
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href^="#"]');
     if (!link) return;
@@ -89,7 +81,6 @@ export function initNav() {
 
     event.preventDefault();
     closeMenu();
-    // scroll-margin-top on .section keeps the heading clear of the navbar.
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     window.history.replaceState(null, '', hash);
   });

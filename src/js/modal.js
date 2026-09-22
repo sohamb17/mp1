@@ -24,8 +24,6 @@ export function initModal() {
     tagsEl.innerHTML = data.modalTags || '';
     bodyEl.textContent = data.modalBody || '';
 
-    // Reuse the card's own image so the resolved URL is always correct,
-    // whether or not webpack rewrote it.
     const cardImage = trigger.querySelector('img');
     if (cardImage && imageEl) {
       imageEl.setAttribute('src', cardImage.getAttribute('src'));
@@ -60,7 +58,6 @@ export function initModal() {
 
     if (event.key !== 'Tab' || !dialog) return;
 
-    // Keep focus inside the dialog while it is open.
     const focusable = Array.from(dialog.querySelectorAll(FOCUSABLE));
     if (!focusable.length) return;
 
