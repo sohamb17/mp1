@@ -4,10 +4,468 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
+        <title>Kyoto Sushi</title>
+        <meta name="description" content="Website for Kyoto Sushi restaurant">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Shippori+Mincho&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/6f0901d974.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <a class="skip-link" href="#home">Skip to content</a>
+
+        <header class="site-header">
+            <nav class="nav container" aria-label="Main navigation">
+                <a class="nav__brand" href="#home">
+                    <span class="nav__brand-mark" aria-hidden="true">京</span>
+                    <span class="nav__brand-text">Kyoto <em>Sushi</em></span>
+                </a>
+
+                <button class="nav__toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <ul class="nav__list" id="nav-menu">
+                    <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#about">Our Craft</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#menu">Menu</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#experience">Experience</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#gallery">Gallery</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#visit">Visit</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section section--hero" id="home">
+                <div class="hero__media" aria-hidden="true"></div>
+                <div class="hero__scrim" aria-hidden="true"></div>
+
+                <div class="container hero__content">
+                    <p class="hero__eyebrow">Champaign, Illinois &middot; Est. 2014</p>
+                    <h1 class="hero__title">Kyoto Sushi</h1>
+                    <p class="hero__tagline">Edomae technique, a twelve-seat counter, and fish that lands on the board the morning it arrives.</p>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="#menu">View the Menu</a>
+                        <a class="btn btn--ghost" href="#visit">Reserve a Table</a>
+                    </div>
+                </div>
+
+                <a class="hero__scroll" href="#about" aria-label="Scroll to Our Craft section">
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </a>
+            </section>
+
+            <section class="section section--alt" id="about">
+                <div class="container">
+                    <p class="section__eyebrow">Our Craft</p>
+                    <h2 class="section__title">Twenty years at the cutting board</h2>
+                    <p class="section__lead">Chef Haruto Ito trained in Osaka before bringing a single, stubborn idea to the Midwest: rice first, fish second, everything else a distant third.</p>
+
+                    <div class="about__grid">
+                        <figure class="about__video reveal">
+                            <video class="about__video-el" controls preload="metadata" poster="assets/roll-plated-1.jpg" src="assets/chef.mp4">
+                                <source src="assets/chef.mp4" type="video/mp4" />
+                                Your browser does not support the HTML5 video element. Please <a href="assets/chef.mp4"> download the clip</a> instead.
+                            </video>
+                            <figcaption class="about__caption">Chef Ito shaping nigiri before evening service.</figcaption>
+                        </figure>
+
+                        <div class="about__text reveal">
+                            <h3 class="about__heading">Rice is the dish</h3>
+                            <p>Our shari is seasoned with a three-year aged red vinegar and held at body temperature all night. It is the part of the meal nobody photographs and the part we argue about most.</p>
+                            <h3 class="about__heading">One counter, one seating</h3>
+                            <p>Twelve seats, two services, no substitutions. The omakase changes daily depending on what clears the market in Chicago.</p>
+
+                            <ul class="about__stats">
+                                <li class="about_stat">
+                                    <span class="about_stat-num">12</span>
+                                    <span class="about_stat-label">Counter seats</span>
+                                </li>
+                                <li class="about__stat">
+                                    <span class="about__stat-num">18</span>
+                                    <span class="about__stat-label">Course omakase</span>
+                                </li>
+                                <li class="about__stat">
+                                    <span class="about__stat-num">3yr</span>
+                                    <span class="about__stat-label">Aged rice vinegar</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="menu">
+                <div class="container">
+                    <p class="section__eyebrow">The Menu</p>
+                    <h2 class="section__title">Signatures</h2>
+                    <p class="section__lead">Select any dish for sourcing notes, allergens and the story behind it.</p>
+
+                    <div class="menu__grid">
+                        <article class="menu-card reveal">
+                            <button
+                                class="menu-card__button"
+                                type="button"
+                                data-modal-title="Salmon Nigiri"
+                                data-modal-price="$9"
+                                data-modal-tags="Nigiri &middot; Two pieces &middot; Contains fish"
+                                data-modal-body="Faroe Island salmon, lightly torched and finished with whipped shiso cream cheese, cracked black sesame and a brush of nikiri. The belly cut only; we serve the loin in the chirashi."
+                            >
+                                <img
+                                    class="menu-card__img"
+                                    src="assets/nigiri.jpg"
+                                    alt="Torched salmon nigiri held between wooden chopsticks"
+                                />
+                                <span class="menu-card__body">
+                                    <span class="menu-card__head">
+                                        <span class="menu-card__title">Salmon Nigiri</span>
+                                        <span class="menu-card__price">$9</span>
+                                    </span>
+                                    <span class="menu-card__desc">
+                                        Torched belly, shiso cream cheese, black sesame.
+                                    </span>
+                                    <span class="menu-card__more">
+                                        Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="menu-card reveal">
+                            <button
+                                class="menu-card__button"
+                                type="button"
+                                data-modal-title="Shrimp Tempura Roll"
+                                data-modal-price="$16"
+                                data-modal-tags="Maki &middot; Eight pieces &middot; Contains shellfish, gluten"
+                                data-modal-body="Black tiger shrimp fried to order in a rice-flour batter, rolled with avocado and cucumber, then dusted with togarashi and scallion. The tail is left standing because it should be."
+                            >
+                                <img
+                                    class="menu-card__img"
+                                    src="assets/roll-shrimp-tempura.jpg"
+                                    alt="Shrimp tempura roll dusted with chili and scallion"
+                                />
+                                <span class="menu-card__body">
+                                    <span class="menu-card__head">
+                                        <span class="menu-card__title">Shrimp Tempura Roll</span>
+                                        <span class="menu-card__price">$16</span>
+                                    </span>
+                                    <span class="menu-card__desc">
+                                        Tiger shrimp, avocado, togarashi, scallion.
+                                    </span>
+                                    <span class="menu-card__more">
+                                        Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="menu-card reveal">
+                            <button
+                                class="menu-card__button"
+                                type="button"
+                                data-modal-title="Dragon Roll"
+                                data-modal-price="$19"
+                                data-modal-tags="Maki &middot; Eight pieces &middot; Contains eel, shellfish"
+                                data-modal-body="Freshwater unagi glazed in our house tare, draped over a shrimp tempura core with avocado scales. Finished tableside with a torch and a line of unagi reduction."
+                            >
+                                <img
+                                class="menu-card__img"
+                                src="assets/roll-dragon.jpg"
+                                alt="Dragon roll plated in a line with chili and scallion garnish"
+                                />
+                                <span class="menu-card__body">
+                                    <span class="menu-card__head">
+                                        <span class="menu-card__title">Dragon Roll</span>
+                                        <span class="menu-card__price">$19</span>
+                                    </span>
+                                    <span class="menu-card__desc">
+                                        Glazed unagi, avocado scales, house tare.
+                                    </span>
+                                    <span class="menu-card__more">
+                                        Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="menu-card reveal">
+                            <button
+                                class="menu-card__button"
+                                type="button"
+                                data-modal-title="Spicy Hamachi Roll"
+                                data-modal-price="$17"
+                                data-modal-tags="Maki &middot; Eight pieces &middot; Spicy &middot; Contains fish"
+                                data-modal-body="Yellowtail folded with fermented chili and yuzu kosho, topped with a citrus aioli that we thin with dashi so it reads as sauce rather than mayonnaise. The heat builds on the third piece."
+                            >
+                                <img
+                                class="menu-card__img"
+                                src="assets/roll-spicy-sauce.jpg"
+                                alt="Spicy yellowtail roll finished with chili aioli"
+                                />
+                                <span class="menu-card__body">
+                                    <span class="menu-card__head">
+                                        <span class="menu-card__title">Spicy Hamachi Roll</span>
+                                        <span class="menu-card__price">$17</span>
+                                    </span>
+                                    <span class="menu-card__desc">
+                                        Yellowtail, yuzu kosho, citrus dashi aioli.
+                                    </span>
+                                    <span class="menu-card__more">
+                                        Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="menu-card reveal">
+                            <button
+                                class="menu-card__button"
+                                type="button"
+                                data-modal-title="Chef's Platter"
+                                data-modal-price="$62"
+                                data-modal-tags="Sharing &middot; Serves two &middot; Contains fish, shellfish"
+                                data-modal-body="Thirty-two pieces across eight preparations, arranged in the order we want you to eat them: white fish first, then silver, then red, then anything that has met a torch."
+                            >
+                                <img
+                                class="menu-card__img"
+                                src="assets/roll-plated-1.jpg"
+                                alt="Assorted sushi platter arranged on a dark round plate"
+                                />
+                                <span class="menu-card__body">
+                                    <span class="menu-card__head">
+                                        <span class="menu-card__title">Chef's Platter</span>
+                                        <span class="menu-card__price">$62</span>
+                                    </span>
+                                    <span class="menu-card__desc">
+                                        Thirty-two pieces, eight preparations, for two.
+                                    </span>
+                                    <span class="menu-card__more">
+                                        Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="menu-card reveal">
+                            <button
+                                class="menu-card__button"
+                                type="button"
+                                data-modal-title="Omakase Counter"
+                                data-modal-price="$120"
+                                data-modal-tags="Tasting &middot; Eighteen courses &middot; Counter only"
+                                data-modal-body="Two hours, eighteen courses, one seating at 6:00 and another at 8:30. The menu is written the same afternoon it is served. Dietary restrictions need seventy-two hours' notice; raw fish allergies we cannot work around."
+                            >
+                                <img
+                                class="menu-card__img"
+                                src="assets/roll-plated-2.jpg"
+                                alt="Plated sushi selection served at the omakase counter"
+                                />
+                                <span class="menu-card__body">
+                                    <span class="menu-card__head">
+                                        <span class="menu-card__title">Omakase Counter</span>
+                                        <span class="menu-card__price">$120</span>
+                                    </span>
+                                    <span class="menu-card__desc">
+                                        Eighteen courses, written the day you eat it.
+                                    </span>
+                                    <span class="menu-card__more">
+                                        Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--parallax" id="experience">
+                <div class="parallax__scrim" aria-hidden="true"></div>
+                <div class="container parallax__content">
+                    <i class="fa-solid fa-quote-left parallax__quote-mark" aria-hidden="true"></i>
+                    <blockquote class="parallax__quote">
+                        The rice at Kyoto Sushi is warm, loosely packed, and seasoned like
+                        someone cared. That is rarer in this state than good fish.
+                    </blockquote>
+                    <p class="parallax__cite">&mdash; Chicago Tribune, Dining</p>
+                </div>
+            </section>
+
+            <section class="section section--alt" id="gallery">
+                <div class="container">
+                    <p class="section__eyebrow">Gallery</p>
+                    <h2 class="section__title">From the counter</h2>
+
+                    <div class="carousel" data-autoplay="6000">
+                        <div class="carousel__viewport">
+                            <ul class="carousel__track">
+                                <li class="carousel__slide is-active">
+                                    <img src="assets/roll-plated-1.jpg" alt="Sushi platter carried out to the dining room" />
+                                    <div class="carousel__caption">
+                                        <h3 class="carousel__caption-title">The Platter</h3>
+                                        <p class="carousel__caption-text">Eight preparations, plated in eating order.</p>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="assets/roll-dragon.jpg" alt="Dragon roll plated with chili and scallion" />
+                                    <div class="carousel__caption">
+                                        <h3 class="carousel__caption-title">Dragon Roll</h3>
+                                        <p class="carousel__caption-text">Torched tableside, glazed twice.</p>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="assets/nigiri.jpg" alt="Salmon nigiri held between chopsticks" />
+                                    <div class="carousel__caption">
+                                        <h3 class="carousel__caption-title">Salmon Nigiri</h3>
+                                        <p class="carousel__caption-text">Belly cut, shiso cream cheese, black sesame.</p>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="assets/roll-spicy-sauce.jpg" alt="Spicy roll finished with chili aioli" />
+                                    <div class="carousel__caption">
+                                        <h3 class="carousel__caption-title">Spicy Hamachi</h3>
+                                        <p class="carousel__caption-text">Yuzu kosho and a dashi-thinned aioli.</p>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="assets/sashimi.jpg" alt="Salmon sushi served beside a dish of soy sauce" />
+                                    <div class="carousel__caption">
+                                        <h3 class="carousel__caption-title">Nikiri, Not Soy</h3>
+                                        <p class="carousel__caption-text">Each piece is brushed for you. The dish is decorative.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous slide">
+                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next slide">
+                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="carousel__dots"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="visit">
+                <div class="container">
+                    <p class="section__eyebrow">Visit</p>
+                    <h2 class="section__title">Find the counter</h2>
+
+                <div class="visit__grid">
+                    <div class="visit__card reveal">
+                        <i class="fa-solid fa-location-dot visit__icon" aria-hidden="true"></i>
+                        <h3 class="visit__card-title">Address</h3>
+                        <p class="visit__card-text">
+                            214 North Neil Street<br />Champaign, IL 61820
+                        </p>
+                    </div>
+
+                    <div class="visit__card reveal">
+                        <i class="fa-regular fa-clock visit__icon" aria-hidden="true"></i>
+                        <h3 class="visit__card-title">Hours</h3>
+                        <p class="visit__card-text">
+                            Tuesday &ndash; Thursday &middot; 5&ndash;10pm<br />
+                            Friday &ndash; Saturday &middot; 5&ndash;11pm<br />
+                            Sunday &amp; Monday &middot; Closed
+                        </p>
+                    </div>
+
+                    <div class="visit__card reveal">
+                        <i class="fa-solid fa-phone visit__icon" aria-hidden="true"></i>
+                        <h3 class="visit__card-title">Reservations</h3>
+                        <p class="visit__card-text">
+                            <a href="tel:+12175550147">(217) 555-0147</a><br />
+                            <a href="mailto:counter@kyotosushi.example">counter@kyotosushi.example</a>
+                        </p>
+                    </div>
+                </div>
+
+                <form class="visit__form reveal" action="#visit" method="get">
+                    <h3 class="visit__form-title">Request a seating</h3>
+                    <div class="visit__fields">
+                    <label class="field">
+                        <span class="field__label">Name</span>
+                        <input class="field__input" type="text" name="name" required />
+                    </label>
+                    <label class="field">
+                        <span class="field__label">Date</span>
+                        <input class="field__input" type="date" name="date" required />
+                    </label>
+                    <label class="field">
+                        <span class="field__label">Guests</span>
+                        <select class="field__input" name="guests">
+                        <option>1</option>
+                        <option selected>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </label>
+                    </div>
+                    <button class="btn btn--primary" type="submit">Request Seating</button>
+                </form>
+                </div>
+            </section>            
+        </main>
+
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <a class="nav__brand nav__brand--footer" href="#home">
+                    <span class="nav__brand-mark" aria-hidden="true">&#20140;</span>
+                    <span class="nav__brand-text">Kyoto <em>Sushi</em></span>
+                </a>
+
+                <ul class="social">
+                    <li class="social__item">
+                        <a class="social__link" href="https://instagram.com" aria-label="Kyoto Sushi on Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="https://facebook.com" aria-label="Kyoto Sushi on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="https://x.com" aria-label="Kyoto Sushi on X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="https://yelp.com" aria-label="Kyoto Sushi on Yelp">
+                            <i class="fa-brands fa-yelp" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <p class="site-footer__legal">
+                    &copy; 2026 Kyoto Sushi &middot; CS 409 MP1 &middot; Photography and
+                    video are placeholders for coursework.
+                </p>
+            </div>
+        </footer>
+
+        <div class="modal" id="dish-modal" aria-hidden="true">
+            <div class="modal__backdrop" data-modal-close></div>
+
+            <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <button class="modal__close" type="button" aria-label="Close dialog" data-modal-close>
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+
+                <img class="modal__image" id="modal-image" alt="" />
+
+                <div class="modal__content">
+                    <p class="modal__tags" id="modal-tags"></p>
+                    <h3 class="modal__title" id="modal-title"></h3>
+                    <p class="modal__price" id="modal-price"></p>
+                    <p class="modal__body" id="modal-body"></p>
+                    <a class="btn btn--primary" href="#visit" data-modal-close>Reserve a Table</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
