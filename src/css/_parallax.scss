@@ -1,0 +1,55 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section--parallax {
+  @include flex-center;
+  @include cover-image("../assets/fixed-bg-stripe.jpg", fixed);
+  min-height: 62vh;
+  padding: clamp(6rem, 12vw, 11rem) 0;
+}
+
+.parallax {
+  &__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(14, 14, 16, 0.82),
+      rgba(14, 14, 16, 0.62)
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 48rem;
+  }
+
+  &__quote-mark {
+    font-size: 2rem;
+    color: $color-accent;
+    margin-bottom: 1.25rem;
+  }
+
+  &__quote {
+    margin: 0;
+    font-family: $font-display;
+    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    font-style: italic;
+    line-height: 1.45;
+  }
+
+  &__cite {
+    margin-top: 1.5rem;
+    font-size: $fs-small;
+    letter-spacing: $tracking-wide;
+    text-transform: uppercase;
+    color: $color-gold;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .section--parallax {
+    background-attachment: scroll;
+  }
+}

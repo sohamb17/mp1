@@ -1,0 +1,60 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.visit {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 3.5rem;
+
+    @include mq-down("md") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include surface;
+    padding: 2.25rem 1.5rem;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: $color-accent;
+    margin-bottom: 1rem;
+  }
+
+  &__card-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+  }
+
+  &__card-text {
+    margin: 0.75rem 0 0;
+    color: $color-muted;
+    line-height: 1.8;
+  }
+
+  &__form {
+    @include surface;
+    max-width: 48rem;
+    margin: 2.5rem auto 0;
+    padding: 2.25rem clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  &__form-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+
+    @include mq-down("sm") {
+      grid-template-columns: 1fr;
+    }
+  }
+}

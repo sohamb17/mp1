@@ -1,1 +1,14 @@
-/* Your SCSS here. */
+/* Kyoto Sushi — style entry point. Partials only; no rules live here. */
+@use "variables";
+@use "mixins";
+@use "base";
+@use "animations";
+@use "nav";
+@use "hero";
+@use "about";
+@use "menu";
+@use "parallax";
+@use "carousel";
+@use "visit";
+@use "footer";
+@use "modal";

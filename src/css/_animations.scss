@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ken-burns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to   { transform: scale(1.12) translate3d(0, -1.5%, 0); }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes nudge-down {
+  0%, 100% { transform: translateY(0); opacity: 0.65; }
+  50%      { transform: translateY(8px); opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity $dur-slow $ease, transform $dur-slow $ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@each $index, $delay in (1: 0ms, 2: 90ms, 3: 180ms, 4: 270ms, 5: 360ms, 6: 450ms) {
+  .reveal:nth-child(#{$index}) {
+    transition-delay: $delay;
+  }
+}

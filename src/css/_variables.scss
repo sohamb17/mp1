@@ -1,0 +1,45 @@
+$color-bg:          #0e0e10;
+$color-bg-alt:      #17171a;
+$color-bg-raised:   #1f1f24;
+$color-text:        #f3ede4;
+$color-muted:       #a89f94;
+$color-accent:      #c8281e;
+$color-accent-soft: #ff7a4d;
+$color-gold:        #c9a86a;
+$color-line:        rgba(243, 237, 228, 0.12);
+
+
+$font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+$font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+$fs-hero:    clamp(3rem, 9vw, 7rem);
+$fs-title:   clamp(2rem, 4.2vw, 3.25rem);
+$fs-sub:     clamp(1.25rem, 2vw, 1.6rem);
+$fs-body:    clamp(1rem, 1.05vw, 1.0625rem);
+$fs-small:   0.875rem;
+$tracking-wide: 0.22em;
+
+
+$container-max: 1200px;
+$gutter:        1.5rem;
+$section-pad-y: clamp(5rem, 9vw, 9rem);
+
+$nav-height:          6.5rem;
+$nav-height-scrolled: 4.25rem;
+
+$radius-sm: 4px;
+$radius-md: 10px;
+
+$ease:     cubic-bezier(0.22, 1, 0.36, 1);
+$dur-fast: 180ms;
+$dur-mid:  380ms;
+$dur-slow: 700ms;
+
+
+$breakpoints: (
+  "sm":  480px,
+  "md":  768px,
+  "lg":  1024px,
+  "xl":  1280px,
+  "xxl": 1600px
+);
